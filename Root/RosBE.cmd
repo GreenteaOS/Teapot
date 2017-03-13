@@ -156,6 +156,5 @@ if "%_ROSBE_SHOWVERSION%" == "1" (
 
 :: Tell how to display the available commands.
 echo.
-echo For a list of all included commands, type: "help"
 echo -------------------------------------------------
 echo.

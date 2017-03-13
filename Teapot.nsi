@@ -116,7 +116,6 @@ Section -BaseFiles SEC01
     File /r Root\chdefdir.cmd
     File /r Root\chdefgcc.cmd
     File /r Root\Clean.cmd
-    File /r Root\Help.cmd
     File /r Root\kdbg.cmd
     File /r Root\LICENSE.txt
     File /r Root\Make.cmd
@@ -351,7 +350,6 @@ Section Uninstall
     Delete /REBOOTOK "$INSTDIR\chdefdir.cmd"
     Delete /REBOOTOK "$INSTDIR\chdefgcc.cmd"
     Delete /REBOOTOK "$INSTDIR\Clean.cmd"
-    Delete /REBOOTOK "$INSTDIR\Help.cmd"
     Delete /REBOOTOK "$INSTDIR\kdbg.cmd"
     Delete /REBOOTOK "$INSTDIR\LICENSE.txt"
     Delete /REBOOTOK "$INSTDIR\Make.cmd"
