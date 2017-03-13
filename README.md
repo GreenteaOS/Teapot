@@ -1,2 +1,2 @@
 # Teapot
-Teapot is our SDK and build system!
+:potable_water: Teapot is our SDK and build system!
