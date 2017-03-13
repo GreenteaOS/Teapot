@@ -112,7 +112,6 @@ Section -BaseFiles SEC01
     File /r Icons\rosbe.ico
     File /r Root\Basedir.cmd
     File /r Root\Build-Shared.cmd
-    File /r Root\changelog.txt
     File /r Root\charch.cmd
     File /r Root\chdefdir.cmd
     File /r Root\chdefgcc.cmd
@@ -350,7 +349,6 @@ Section Uninstall
     NO_SHORTCUTS:
     Delete /REBOOTOK "$INSTDIR\Basedir.cmd"
     Delete /REBOOTOK "$INSTDIR\Build-Shared.cmd"
-    Delete /REBOOTOK "$INSTDIR\ChangeLog.txt"
     Delete /REBOOTOK "$INSTDIR\charch.cmd"
     Delete /REBOOTOK "$INSTDIR\chdefdir.cmd"
     Delete /REBOOTOK "$INSTDIR\chdefgcc.cmd"
