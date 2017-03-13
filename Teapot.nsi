@@ -38,7 +38,6 @@ SetCompressor /FINAL /SOLID lzma
 !include "RosSourceDir.nsh"
 !include "LogicLib.nsh"
 !include "EnvVarUpdate.nsh"
-!include "AddCertificateToStore.nsh"
 
 ;;
 ;; Read our custom page ini, remove previous version and make sure only
@@ -258,34 +257,6 @@ Section /o "Add BIN folder to PATH variable (MSVC users)" SEC03
     ${EnvVarUpdate} $0 "PATH" "A" "HKCU" "$INSTDIR\bin"
 SectionEnd
 
-Section /o "Update for GlobalSign Certificates (XP users NEED THAT)" SEC04
-    SetShellVarContext current
-    SetOutPath "$INSTDIR\certs"
-    SetOverwrite try
-    File /r Components\certs\Root-R1.crt
-    File /r Components\certs\Root-R2.crt
-    File /r Components\certs\Root-R3.crt
-    
-    Push "$INSTDIR\certs\Root-R1.crt"
-    Call AddCertificateToStore
-    Pop $0
-    ${If} $0 != success
-        MessageBox MB_OK "Import of R1 GlobalSign Root Certificate failed: $0"
-    ${EndIf}
-    Push "$INSTDIR\certs\Root-R2.crt"
-    Call AddCertificateToStore
-    Pop $0
-    ${If} $0 != success
-        MessageBox MB_OK "Import of R1 GlobalSign Root Certificate failed: $0"
-    ${EndIf}
-    Push "$INSTDIR\certs\Root-R3.crt"
-    Call AddCertificateToStore
-    Pop $0
-    ${If} $0 != success
-        MessageBox MB_OK "Import of R1 GlobalSign Root Certificate failed: $0"
-    ${EndIf}
-SectionEnd
-
 Section /o "PowerShell Version" SEC05
     SetShellVarContext current
     SetOutPath "$INSTDIR"
@@ -413,7 +384,6 @@ Section Uninstall
     ;;
     RMDir /r /REBOOTOK "$INSTDIR\i386"
     RMDir /r /REBOOTOK "$INSTDIR\Bin"
-    RMDir /r /REBOOTOK "$INSTDIR\certs"
     RMDir /r /REBOOTOK "$INSTDIR\samples"
     RMDir /r /REBOOTOK "$INSTDIR\share"
     StrCmp $ICONS_GROUP "" NO_SHORTCUTS
