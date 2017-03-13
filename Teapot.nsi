@@ -253,35 +253,6 @@ Section /o "Add BIN folder to PATH variable (MSVC users)" SEC03
     ${EnvVarUpdate} $0 "PATH" "A" "HKCU" "$INSTDIR\bin"
 SectionEnd
 
-Section /o "PowerShell Version" SEC05
-    SetShellVarContext current
-    SetOutPath "$INSTDIR"
-    SetOverwrite try
-    File /r Components\Powershell\Build.ps1
-    File /r Components\Powershell\charch.ps1
-    File /r Components\Powershell\chdefdir.ps1
-    File /r Components\Powershell\chdefgcc.ps1
-    File /r Components\Powershell\Clean.ps1
-    File /r Components\Powershell\Help.ps1
-    File /r Components\Powershell\kdbg.ps1
-    File /r Components\Powershell\options.ps1
-    File /r Components\Powershell\reladdr2line.ps1
-    File /r Components\Powershell\reladdr2lineNW.ps1
-    File /r Components\Powershell\Remake.ps1
-    File /r Components\Powershell\Remakex.ps1
-    File /r Components\Powershell\RosBE.ps1
-    File /r Components\Powershell\rosbe-gcc-env.ps1
-    File /r Components\Powershell\scut.ps1
-    File /r Components\Powershell\sSVN.ps1
-    File /r Components\Powershell\update.ps1
-    File /r Components\Powershell\version.ps1
-    SetOutPath "$DESKTOP"
-    SetOverwrite try
-    File /r "Components\Powershell\RosBE PS - PostInstall.reg"
-    MessageBox MB_ICONINFORMATION|MB_OK \
-               "A REG-File was generated on your desktop. Please use it with Admin Rights to set Powershell's execution rights correctly if your RosBE Powershell Version fails to run after install. Otherwise, just delete it."
-SectionEnd
-
 Section -StartMenuShortcuts SEC06
     SetShellVarContext current
 
@@ -294,8 +265,6 @@ Section -StartMenuShortcuts SEC06
             SetOutPath $REACTOS_SOURCE_DIRECTORY
             IfFileExists "$INSTDIR\RosBE.cmd" 0 +2
                 CreateShortCut "$SMPROGRAMS\$ICONS_GROUP\ReactOS Build Environment ${PRODUCT_VERSION}.lnk" "$SYSDIR\cmd.exe" '/t:0A /k "$INSTDIR\RosBE.cmd"' "$INSTDIR\rosbe.ico"
-            IfFileExists "$INSTDIR\RosBE.ps1" 0 +2
-                CreateShortCut "$SMPROGRAMS\$ICONS_GROUP\ReactOS Build Environment ${PRODUCT_VERSION} - PS.lnk" "$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" "-noexit &'$INSTDIR\RosBE.ps1'" "$INSTDIR\rosbe.ico"
             SetOutPath $INSTDIR
             CreateShortCut "$SMPROGRAMS\$ICONS_GROUP\Uninstall RosBE.lnk" \
                            "$INSTDIR\Uninstall.exe"
@@ -314,8 +283,6 @@ Section /o "Desktop Shortcuts" SEC07
         SetOutPath $REACTOS_SOURCE_DIRECTORY
         IfFileExists "$INSTDIR\RosBE.cmd" 0 +2
             CreateShortCut "$DESKTOP\ReactOS Build Environment ${PRODUCT_VERSION}.lnk" "$SYSDIR\cmd.exe" '/t:0A /k "$INSTDIR\RosBE.cmd"' "$INSTDIR\rosbe.ico"
-        IfFileExists "$INSTDIR\RosBE.ps1" 0 +2
-            CreateShortCut "$DESKTOP\ReactOS Build Environment ${PRODUCT_VERSION} - PS.lnk" "$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" "-noexit &'$INSTDIR\RosBE.ps1'" "$INSTDIR\rosbe.ico"
 SectionEnd
 
 Section /o "Quick Launch Shortcuts" SEC08
@@ -328,8 +295,6 @@ Section /o "Quick Launch Shortcuts" SEC08
         SetOutPath $REACTOS_SOURCE_DIRECTORY
         IfFileExists "$INSTDIR\RosBE.cmd" 0 +2
             CreateShortCut "$QUICKLAUNCH\ReactOS Build Environment ${PRODUCT_VERSION}.lnk" "$SYSDIR\cmd.exe" '/t:0A /k "$INSTDIR\RosBE.cmd"' "$INSTDIR\rosbe.ico"
-        IfFileExists "$INSTDIR\RosBE.ps1" 0 +2
-            CreateShortCut "$QUICKLAUNCH\ReactOS Build Environment ${PRODUCT_VERSION} - PS.lnk" "$SYSDIR\WindowsPowerShell\v1.0\powershell.exe" "-noexit &'$INSTDIR\RosBE.ps1'" "$INSTDIR\rosbe.ico"
 SectionEnd
 
 Section -Post SEC09
@@ -384,51 +349,32 @@ Section Uninstall
     RMDir /r /REBOOTOK "$SMPROGRAMS\$ICONS_GROUP"
     NO_SHORTCUTS:
     Delete /REBOOTOK "$INSTDIR\Basedir.cmd"
-    Delete /REBOOTOK "$INSTDIR\Build.ps1"
     Delete /REBOOTOK "$INSTDIR\Build-Shared.cmd"
     Delete /REBOOTOK "$INSTDIR\ChangeLog.txt"
     Delete /REBOOTOK "$INSTDIR\charch.cmd"
-    Delete /REBOOTOK "$INSTDIR\charch.ps1"
     Delete /REBOOTOK "$INSTDIR\chdefdir.cmd"
-    Delete /REBOOTOK "$INSTDIR\chdefdir.ps1"
     Delete /REBOOTOK "$INSTDIR\chdefgcc.cmd"
-    Delete /REBOOTOK "$INSTDIR\chdefgcc.ps1"
     Delete /REBOOTOK "$INSTDIR\Clean.cmd"
-    Delete /REBOOTOK "$INSTDIR\Clean.ps1"
     Delete /REBOOTOK "$INSTDIR\Help.cmd"
-    Delete /REBOOTOK "$INSTDIR\Help.ps1"
     Delete /REBOOTOK "$INSTDIR\kdbg.cmd"
-    Delete /REBOOTOK "$INSTDIR\kdbg.ps1"
     Delete /REBOOTOK "$INSTDIR\LICENSE.txt"
     Delete /REBOOTOK "$INSTDIR\Make.cmd"
     Delete /REBOOTOK "$INSTDIR\Makex.cmd"
     Delete /REBOOTOK "$INSTDIR\options.cmd"
-    Delete /REBOOTOK "$INSTDIR\options.ps1"
     Delete /REBOOTOK "$INSTDIR\raddr2line.cmd"
     Delete /REBOOTOK "$INSTDIR\raddr2lineNW.cmd"
-    Delete /REBOOTOK "$INSTDIR\reladdr2line.ps1"
-    Delete /REBOOTOK "$INSTDIR\reladdr2lineNW.ps1"
     Delete /REBOOTOK "$INSTDIR\Remake.cmd"
     Delete /REBOOTOK "$INSTDIR\Remakex.cmd"
-    Delete /REBOOTOK "$INSTDIR\Remake.ps1"
-    Delete /REBOOTOK "$INSTDIR\Remakex.ps1"
     Delete /REBOOTOK "$INSTDIR\Renv.cmd"
-    Delete /REBOOTOK "$INSTDIR\RosBE PS - PostInstall.reg"
     Delete /REBOOTOK "$INSTDIR\RosBE.cmd"
     Delete /REBOOTOK "$INSTDIR\rosbe.ico"
-    Delete /REBOOTOK "$INSTDIR\RosBE.ps1"
     Delete /REBOOTOK "$INSTDIR\rosbe-gcc-env.cmd"
-    Delete /REBOOTOK "$INSTDIR\rosbe-gcc-env.ps1"
     Delete /REBOOTOK "$INSTDIR\scut.cmd"
-    Delete /REBOOTOK "$INSTDIR\scut.ps1"
     Delete /REBOOTOK "$INSTDIR\sSVN.cmd"
-    Delete /REBOOTOK "$INSTDIR\sSVN.ps1"
     Delete /REBOOTOK "$INSTDIR\TimeDate.cmd"
     Delete /REBOOTOK "$INSTDIR\uninstall.ico"
     Delete /REBOOTOK "$INSTDIR\update.cmd"
-    Delete /REBOOTOK "$INSTDIR\update.ps1"
     Delete /REBOOTOK "$INSTDIR\version.cmd"
-    Delete /REBOOTOK "$INSTDIR\version.ps1"
     Delete /REBOOTOK "$INSTDIR\Uninstall.exe"
     ;; Whoever dares to change this back into: RMDir /r /REBOOTOK "$INSTDIR" will be KILLED!!!
     RMDir /REBOOTOK "$INSTDIR"
