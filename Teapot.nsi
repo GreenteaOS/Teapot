@@ -93,8 +93,6 @@ var ICONS_GROUP
 !insertmacro MUI_PAGE_INSTFILES
 
 !define MUI_FINISHPAGE_TITLE_3LINES
-!define MUI_FINISHPAGE_SHOWREADME "$INSTDIR\README.pdf"
-!define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
 !insertmacro MUI_PAGE_FINISH
 
 ;;
@@ -128,7 +126,6 @@ Section -BaseFiles SEC01
     File /r Root\options.cmd
     File /r Root\raddr2line.cmd
     File /r Root\raddr2lineNW.cmd
-    File /r Root\README.pdf
     File /r Root\Remake.cmd
     File /r Root\Remakex.cmd
     File /r Root\Renv.cmd
@@ -336,8 +333,6 @@ Section -StartMenuShortcuts SEC06
             SetOutPath $INSTDIR
             CreateShortCut "$SMPROGRAMS\$ICONS_GROUP\Uninstall RosBE.lnk" \
                            "$INSTDIR\Uninstall.exe"
-            CreateShortCut "$SMPROGRAMS\$ICONS_GROUP\Readme.lnk" \
-                           "$INSTDIR\README.pdf"
             CreateShortCut "$SMPROGRAMS\$ICONS_GROUP\Options.lnk" \
                            "$INSTDIR\Bin\options.exe"
     !insertmacro MUI_STARTMENU_WRITE_END
@@ -448,7 +443,6 @@ Section Uninstall
     Delete /REBOOTOK "$INSTDIR\playwav.ps1"
     Delete /REBOOTOK "$INSTDIR\raddr2line.cmd"
     Delete /REBOOTOK "$INSTDIR\raddr2lineNW.cmd"
-    Delete /REBOOTOK "$INSTDIR\README.pdf"
     Delete /REBOOTOK "$INSTDIR\reladdr2line.ps1"
     Delete /REBOOTOK "$INSTDIR\reladdr2lineNW.ps1"
     Delete /REBOOTOK "$INSTDIR\Remake.cmd"
