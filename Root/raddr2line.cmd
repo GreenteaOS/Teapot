@@ -63,5 +63,5 @@ if not "%OUTPUT%" == "" (
 )
 
 :EOC
-title ReactOS Build Environment %_ROSBE_VERSION%
+title Teapot %_ROSBE_VERSION%
 endlocal

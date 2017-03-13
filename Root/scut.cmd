@@ -39,4 +39,4 @@ goto :EOC
 call scut.exe "%1" %2 %3
 
 :EOC
-title ReactOS Build Environment %_ROSBE_VERSION%
+title Teapot %_ROSBE_VERSION%

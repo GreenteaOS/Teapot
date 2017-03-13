@@ -31,4 +31,4 @@ pause
 
 log2lines -c %LOGFILE% < \\.\pipe\kdbg
 
-title ReactOS Build Environment %_ROSBE_VERSION%
+title Teapot %_ROSBE_VERSION%

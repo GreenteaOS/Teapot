@@ -25,4 +25,4 @@ if not "%ROS_ARCH%" == "" (
     echo.
     GOTO :WHILE %*
 
-title ReactOS Build Environment %_ROSBE_VERSION%
+title Teapot %_ROSBE_VERSION%

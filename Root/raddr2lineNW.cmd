@@ -66,5 +66,5 @@ for /f %%i in ('"echoh.exe !ADDRESS!"') do set RELBASE=%%i
 addr2line.exe -p -f -a -e !FILEPATH! !RELBASE!
 
 :EOC
-title ReactOS Build Environment %_ROSBE_VERSION%
+title Teapot %_ROSBE_VERSION%
 endlocal

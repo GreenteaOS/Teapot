@@ -16,7 +16,7 @@ if %_ROSBE_DEBUG% == 1 (
     @echo on
 )
 
-title ReactOS Build Environment %_ROSBE_VERSION%
+title Teapot %_ROSBE_VERSION%
 
 set platform=false
 set _ROSBE_MSVCARCH=%2
@@ -163,7 +163,7 @@ echo For a list of all included commands, type: "help"
 echo -------------------------------------------------
 echo.
 
-:: Look if the ReactOS source directory is empty. If so,
+:: Look if the source directory is empty. If so,
 :: inform the user and mention 'ssvn create' (only if ssvn is installed).
 setlocal enabledelayedexpansion
 if exist "%_ROSBE_BASEDIR%\sSVN.cmd" (

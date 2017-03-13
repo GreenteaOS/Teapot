@@ -179,7 +179,7 @@ goto :EOF
 
 :EOC
 cd /d "%_ROSBE_OPATH%"
-title ReactOS Build Environment %_ROSBE_VERSION%
+title Teapot %_ROSBE_VERSION%
 endlocal
 
 :OUT

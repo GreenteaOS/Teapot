@@ -76,5 +76,5 @@ if %_ROSBE_WRITELOG% == 1 (
 flash.exe
 
 :EOF
-title ReactOS Build Environment %_ROSBE_VERSION%
+title Teapot %_ROSBE_VERSION%
 echo.

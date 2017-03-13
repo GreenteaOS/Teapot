@@ -70,4 +70,4 @@ call "%_ROSBE_BASEDIR%\rosbe-gcc-env.cmd"
 call "%_ROSBE_BASEDIR%\version.cmd"
 
 :EOC
-title ReactOS Build Environment %_ROSBE_VERSION%
+title Teapot %_ROSBE_VERSION%

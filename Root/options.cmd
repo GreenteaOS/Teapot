@@ -35,4 +35,4 @@ if exist "%_ROSBE_BASEDIR%\bin\options.exe" (
     echo ERROR: options executable was not found.
 )
 
-title ReactOS Build Environment %_ROSBE_VERSION%
+title Teapot %_ROSBE_VERSION%
