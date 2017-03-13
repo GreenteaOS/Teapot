@@ -130,7 +130,6 @@ Section -BaseFiles SEC01
     File /r Root\RosBE.cmd
     File /r Root\rosbe-gcc-env.cmd
     File /r Root\scut.cmd
-    File /r Root\sSVN.cmd
     File /r Root\TimeDate.cmd
     File /r Root\update.cmd
     File /r Root\version.cmd
@@ -368,7 +367,6 @@ Section Uninstall
     Delete /REBOOTOK "$INSTDIR\teapot.ico"
     Delete /REBOOTOK "$INSTDIR\rosbe-gcc-env.cmd"
     Delete /REBOOTOK "$INSTDIR\scut.cmd"
-    Delete /REBOOTOK "$INSTDIR\sSVN.cmd"
     Delete /REBOOTOK "$INSTDIR\TimeDate.cmd"
     Delete /REBOOTOK "$INSTDIR\uninstall.ico"
     Delete /REBOOTOK "$INSTDIR\update.cmd"
