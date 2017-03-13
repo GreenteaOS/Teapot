@@ -131,7 +131,6 @@ Section -BaseFiles SEC01
     File /r Root\rosbe-gcc-env.cmd
     File /r Root\scut.cmd
     File /r Root\TimeDate.cmd
-    File /r Root\update.cmd
     File /r Root\version.cmd
     SetOutPath "$INSTDIR\share"
     SetOverwrite try
@@ -369,7 +368,6 @@ Section Uninstall
     Delete /REBOOTOK "$INSTDIR\scut.cmd"
     Delete /REBOOTOK "$INSTDIR\TimeDate.cmd"
     Delete /REBOOTOK "$INSTDIR\uninstall.ico"
-    Delete /REBOOTOK "$INSTDIR\update.cmd"
     Delete /REBOOTOK "$INSTDIR\version.cmd"
     Delete /REBOOTOK "$INSTDIR\Uninstall.exe"
     ;; Whoever dares to change this back into: RMDir /r /REBOOTOK "$INSTDIR" will be KILLED!!!

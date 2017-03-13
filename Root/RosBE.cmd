@@ -133,7 +133,6 @@ if exist "%APPDATA%\RosBE\rosbe-options-%1.cmd" (
 )
 
 call "%_ROSBE_BASEDIR%\rosbe-gcc-env.cmd"
-doskey update="%_ROSBE_BASEDIR%\update.cmd" $*
 
 :: Use the default prompt
 prompt
@@ -154,8 +153,6 @@ if exist "%_ROSBE_BASEDIR%\scut.cmd" (
 if "%_ROSBE_SHOWVERSION%" == "1" (
     call "%_ROSBE_BASEDIR%\version.cmd"
 )
-
-call "%_ROSBE_BASEDIR%\update.cmd" verstatus
 
 :: Tell how to display the available commands.
 echo.

@@ -81,10 +81,6 @@ if "%1" == "" (
         echo                           changes active immediately.
     )
 
-    if exist "%_ROSBE_BASEDIR%\update.cmd" (
-        echo    update [OPTIONS]     - Updates RosBE to the most recent files.
-    )
-
     echo.
 ) else if /i "%1" == "make" (
     echo Usage: make [OPTIONS]
@@ -215,17 +211,6 @@ if "%1" == "" (
         echo Usage: options
         echo Starts the RosBE configurator and sets the changes active in the current
         echo RosBE session immediately.
-    )
-) else if /i "%1" == "update" (
-    if exist "%_ROSBE_BASEDIR%\update.cmd" (
-        echo Usage: update [OPTIONS]
-        echo Updates all files of RosBE to the most recent files.
-        echo.
-        echo    delete X - Deletes Update Nr X.
-        echo    info X   - Shows info about Update Nr X.
-        echo    nr X     - Re/Installs Update Nr X.
-        echo    reset    - Removes the Updates Cache. Not recommended.
-        echo    status   - Shows the recent status of available, non installed updates.
     )
 ) else (
     echo Unknown command specified. No help available for %1.
