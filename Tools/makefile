@@ -1,4 +1,4 @@
-# makefile - Simple makefile to build the various RosBE tools.
+# makefile - Simple makefile to build the various tools.
 
 .PHONY: all clean
 
@@ -8,7 +8,7 @@ STRIP := strip
 SUFFIX := .exe
 WINVER := 0x500
 
-all: buildtime chknewer chkslash echoh flash getdate playwav rquote tee
+all: buildtime chknewer chkslash echoh flash getdate rquote tee
 
 buildtime:  buildtime.c
 	${CC} ${CFLAGS} buildtime$(SUFFIX) buildtime.c
@@ -34,10 +34,6 @@ getdate:  getdate.c
 	${CC} ${CFLAGS} getdate getdate.c
 	$(STRIP) getdate$(SUFFIX)
 
-playwav:  playwav.cpp
-	${CC} ${CFLAGS} playwav playwav.cpp -lwinmm
-	$(STRIP) playwav$(SUFFIX)
-	
 rquote:  rquote.c
 	${CC} ${CFLAGS} rquote rquote.c
 	$(STRIP) rquote$(SUFFIX)
@@ -47,4 +43,4 @@ tee:  tee.c
 	$(STRIP) tee$(SUFFIX)
 
 clean:
-	del /f buildtime.exe chknewer.exe chkslash.exe echoh.exe flash.exe getdate.exe playwav.exe rquote.exe tee.exe
+	del /f buildtime.exe chknewer.exe chkslash.exe echoh.exe flash.exe getdate.exe rquote.exe tee.exe

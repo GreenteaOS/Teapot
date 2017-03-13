@@ -204,7 +204,6 @@ Section -BaseFiles SEC01
     File /r Components\Bin\patch.exe.manifest
     File /r Components\Bin\pexports.exe
     File /r Components\Bin\piperead.exe
-    File /r Components\Bin\playwav.exe
     File /r Components\Bin\regex2.dll
     File /r Components\Bin\rquote.exe
     File /r Components\Bin\saslANONYMOUS.dll
@@ -241,9 +240,6 @@ Section -BaseFiles SEC01
     SetOutPath "$INSTDIR\Bin\data"
     SetOverwrite try
     File /r Components\Bin\data\*.*
-    SetOutPath "$INSTDIR\samples"
-    SetOverwrite try
-    File /r Components\samples\*.*
 SectionEnd
 
 Section -MinGWGCCNASM SEC02
@@ -269,7 +265,6 @@ Section /o "PowerShell Version" SEC05
     File /r Components\Powershell\Help.ps1
     File /r Components\Powershell\kdbg.ps1
     File /r Components\Powershell\options.ps1
-    File /r Components\Powershell\playwav.ps1
     File /r Components\Powershell\reladdr2line.ps1
     File /r Components\Powershell\reladdr2lineNW.ps1
     File /r Components\Powershell\Remake.ps1
@@ -384,7 +379,6 @@ Section Uninstall
     ;;
     RMDir /r /REBOOTOK "$INSTDIR\i386"
     RMDir /r /REBOOTOK "$INSTDIR\Bin"
-    RMDir /r /REBOOTOK "$INSTDIR\samples"
     RMDir /r /REBOOTOK "$INSTDIR\share"
     StrCmp $ICONS_GROUP "" NO_SHORTCUTS
     RMDir /r /REBOOTOK "$SMPROGRAMS\$ICONS_GROUP"
@@ -410,7 +404,6 @@ Section Uninstall
     Delete /REBOOTOK "$INSTDIR\Makex.cmd"
     Delete /REBOOTOK "$INSTDIR\options.cmd"
     Delete /REBOOTOK "$INSTDIR\options.ps1"
-    Delete /REBOOTOK "$INSTDIR\playwav.ps1"
     Delete /REBOOTOK "$INSTDIR\raddr2line.cmd"
     Delete /REBOOTOK "$INSTDIR\raddr2lineNW.cmd"
     Delete /REBOOTOK "$INSTDIR\reladdr2line.ps1"
