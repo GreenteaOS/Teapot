@@ -61,7 +61,7 @@ FunctionEnd
 ;; MUI Settings
 ;;
 !define MUI_ABORTWARNING
-!define MUI_ICON "Icons\rosbe.ico"
+!define MUI_ICON "Icons\teapot.ico"
 !define MUI_UNICON "Icons\uninstall.ico"
 !define MUI_COMPONENTSPAGE_NODESC
 
@@ -109,7 +109,7 @@ Section -BaseFiles SEC01
     SetShellVarContext current
     SetOutPath "$INSTDIR"
     SetOverwrite try
-    File /r Icons\rosbe.ico
+    File /r Icons\teapot.ico
     File /r Root\Basedir.cmd
     File /r Root\Build-Shared.cmd
     File /r Root\charch.cmd
@@ -365,7 +365,7 @@ Section Uninstall
     Delete /REBOOTOK "$INSTDIR\Remakex.cmd"
     Delete /REBOOTOK "$INSTDIR\Renv.cmd"
     Delete /REBOOTOK "$INSTDIR\RosBE.cmd"
-    Delete /REBOOTOK "$INSTDIR\rosbe.ico"
+    Delete /REBOOTOK "$INSTDIR\teapot.ico"
     Delete /REBOOTOK "$INSTDIR\rosbe-gcc-env.cmd"
     Delete /REBOOTOK "$INSTDIR\scut.cmd"
     Delete /REBOOTOK "$INSTDIR\sSVN.cmd"
