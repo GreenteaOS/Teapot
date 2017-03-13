@@ -41,5 +41,3 @@ typedef struct _SETTINGS
 SETTINGS, *PSETTINGS;
 
 wchar_t *wcsset(wchar_t *string, wchar_t c);
-BOOL amd64 = FALSE;
-BOOL arm = FALSE;

@@ -40,8 +40,6 @@
 #define ID_BROWSE 0x1d
 #define ID_BROWSEMGW 0x1e
 #define ID_DIALOG 0x21
-#define ID_DIALOG64 0x22
-#define ID_DIALOGARM 0x23
 #define ID_EXAMPLE 0x24
 #define IDC_FONT 0x25
 #define IDC_BACK 0x26
