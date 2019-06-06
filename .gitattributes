@@ -1,0 +1,5 @@
+.gitattributes text=auto
+.gitignore text=auto
+*.exe binary
+*.dll binary
+*.lib binary
