@@ -3,3 +3,4 @@
 *.exe binary
 *.dll binary
 *.lib binary
+*.fd binary
