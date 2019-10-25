@@ -2,6 +2,8 @@
 
 :potable_water: Teapot is our SDK and build system!
 
+![Teapot](pokemon.png?raw=true)
+
 ### [Download latest .zip](https://github.com/GreenteaOS/Teapot/archive/master.zip)
 
 You may clone with `--depth 1` to avoid downloading whole repo history:

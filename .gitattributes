@@ -5,3 +5,6 @@
 *.lib binary
 *.fd binary
 *.img binary
+*.png binary
+*.jpg binary
+*.gif binary
