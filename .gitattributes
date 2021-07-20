@@ -1,5 +1,6 @@
 .gitattributes text=auto
 .gitignore text=auto
+LICENSE text=auto
 *.exe binary
 *.dll binary
 *.lib binary
