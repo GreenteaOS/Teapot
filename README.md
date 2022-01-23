@@ -4,7 +4,7 @@
 
 ![Teapot](pokemon.png?raw=true)
 
-### [Download latest .zip](https://github.com/GreenteaOS/Teapot/archive/master.zip)
+### [Download latest .zip](https://github.com/GreenteaOS/Teapot/archive/kawaii.zip)
 
 You may clone with `--depth 1` to avoid downloading whole repo history:
 
