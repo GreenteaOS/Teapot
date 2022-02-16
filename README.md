@@ -1,8 +1,14 @@
-# Teapot
+<p align="center">
+  <img width="320px" src="teapot.png?raw=true" />
+</p>
 
-:potable_water: Teapot is our SDK and build system!
+<div align="center">
+  <h1>Teapot</h1>
+</div>
 
-![Teapot](pokemon.png?raw=true)
+<p align="center">
+  Greentea OS Development Kit
+</p>
 
 ### [Download latest .zip](https://github.com/GreenteaOS/Teapot/archive/kawaii.zip)
 
