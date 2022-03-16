@@ -12,6 +12,8 @@
 
 ### [Download latest .zip](https://github.com/GreenteaOS/Teapot/archive/kawaii.zip)
 
+Click [this link to download .zip](https://github.com/GreenteaOS/Teapot/archive/kawaii.zip)
+
 You may clone with `--depth 1` to avoid downloading whole repo history:
 
 ```sh
