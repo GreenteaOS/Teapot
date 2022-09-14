@@ -20,6 +20,11 @@ You may clone with `--depth 1` to avoid downloading whole repo history:
 git clone --recursive --depth 1 https://github.com/GreenteaOS/Teapot.git
 ```
 
+It is expected by default that you have a following folder structure:
+`Tofita` and `Teapot` at the same parent folder (*not* within Tofita!).
+
+This way you can simply run `build.bat` without any configuration.
+
 ### Reproducible builds
 
 By using the same combination of Teapot binaries, Hexa compiler and Tofita source code,
