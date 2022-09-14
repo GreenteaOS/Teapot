@@ -1,0 +1,46 @@
+From 1cc24500bbf045ea76e5174ffeb9a097ad1e40d2 Mon Sep 17 00:00:00 2001
+From: acidicMercury8 <acidicmercury8@outlook.com>
+Date: Wed, 14 Sep 2022 20:59:05 +0300
+Subject: [PATCH 1/2] Disable unused targets
+
+---
+ llvm/CMakeLists.txt | 19 +------------------
+ 1 file changed, 1 insertion(+), 18 deletions(-)
+
+diff --git a/llvm/CMakeLists.txt b/llvm/CMakeLists.txt
+index 2da05ef870b9..d2cce1b49cb2 100644
+--- a/llvm/CMakeLists.txt
++++ b/llvm/CMakeLists.txt
+@@ -335,28 +335,11 @@ set(LLVM_INCLUDE_DIR ${CMAKE_CURRENT_BINARY_DIR}/include)
+ 
+ # List of all targets to be built by default:
+ set(LLVM_ALL_TARGETS
+-  AArch64
+-  AMDGPU
+-  ARM
+-  AVR
+-  BPF
+-  Hexagon
+-  Lanai
+-  Mips
+-  MSP430
+-  NVPTX
+-  PowerPC
+-  RISCV
+-  Sparc
+-  SystemZ
+-  VE
+-  WebAssembly
+   X86
+-  XCore
+   )
+ 
+ # List of targets with JIT support:
+-set(LLVM_TARGETS_WITH_JIT X86 PowerPC AArch64 ARM Mips SystemZ)
++set(LLVM_TARGETS_WITH_JIT X86)
+ 
+ set(LLVM_TARGETS_TO_BUILD "all"
+     CACHE STRING "Semicolon-separated list of targets to build, or \"all\".")
+-- 
+2.37.3.windows.1
+
