@@ -1,0 +1,47 @@
+From 913f2e431d2aa16022a773567c1a1c227646bd51 Mon Sep 17 00:00:00 2001
+From: acidicMercury8 <acidicmercury8@outlook.com>
+Date: Wed, 14 Sep 2022 21:01:23 +0300
+Subject: [PATCH 2/2] Fix private global prefix highlighting
+
+---
+ llvm/include/llvm/IR/DataLayout.h | 4 ++--
+ llvm/lib/MC/MCAsmInfo.cpp         | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/llvm/include/llvm/IR/DataLayout.h b/llvm/include/llvm/IR/DataLayout.h
+index 36438fc4f4e0..32047a746a32 100644
+--- a/llvm/include/llvm/IR/DataLayout.h
++++ b/llvm/include/llvm/IR/DataLayout.h
+@@ -337,14 +337,14 @@ public:
+       return "";
+     case MM_ELF:
+     case MM_WinCOFF:
+-      return ".L";
++      return ".^PRIVATE";
+     case MM_GOFF:
+       return "@";
+     case MM_Mips:
+       return "$";
+     case MM_MachO:
+     case MM_WinCOFFX86:
+-      return "L";
++      return "^PRIVATE";
+     case MM_XCOFF:
+       return "L..";
+     }
+diff --git a/llvm/lib/MC/MCAsmInfo.cpp b/llvm/lib/MC/MCAsmInfo.cpp
+index f52503d7b160..44d59651100d 100644
+--- a/llvm/lib/MC/MCAsmInfo.cpp
++++ b/llvm/lib/MC/MCAsmInfo.cpp
+@@ -42,7 +42,7 @@ MCAsmInfo::MCAsmInfo() {
+   SeparatorString = ";";
+   CommentString = "#";
+   LabelSuffix = ":";
+-  PrivateGlobalPrefix = "L";
++  PrivateGlobalPrefix = "^PRIVATE";
+   PrivateLabelPrefix = PrivateGlobalPrefix;
+   LinkerPrivateGlobalPrefix = "";
+   InlineAsmStart = "APP";
+-- 
+2.37.3.windows.1
+
