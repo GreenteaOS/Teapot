@@ -1,0 +1,11 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tform1.caption
+msgid "Teapot"
+msgstr ""
+
+#: tform1.image1.hint
+msgid "Click anywhere to begin"
+msgstr ""
+
