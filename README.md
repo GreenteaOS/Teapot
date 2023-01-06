@@ -30,3 +30,7 @@ This way you can simply run `build.bat` without any configuration.
 By using the same combination of Teapot binaries, Hexa compiler and Tofita source code,
 you should have the same binary output. Shouldn't depend on the host system version or any
 third-party libraries.
+
+<p align="center">
+  <img src="splash.png?raw=true" />
+</p>
