@@ -9,3 +9,5 @@ Thumbs.db
 *:encryptable
 __MACOSX
 OVMF.fd
+gui/lib/i386-win32
+gui/backup
