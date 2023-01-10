@@ -22,6 +22,7 @@ git clone --recursive --depth 1 https://github.com/GreenteaOS/Teapot.git
 
 It is expected by default that you have a following folder structure:
 `Tofita` and `Teapot` at the same parent folder (*not* within Tofita!).
+Check [Tofita](https://github.com/GreenteaOS/Tofita) repo for additional build instructions.
 
 This way you can simply run `build.bat` without any configuration.
 
